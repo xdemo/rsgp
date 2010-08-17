@@ -11,8 +11,10 @@
         </child>
         <child>
           <object class="GtkAction" id="imagemenuitem1">
-            <property name="stock_id">gtk-new</property>
+            <property name="stock_id">gtk-missing-image</property>
             <property name="name">imagemenuitem1</property>
+            <property name="label">Fetch Icons</property>
+            <signal handler="get_icons" name="activate"/>
           </object>
         </child>
         <child>
@@ -40,12 +42,6 @@
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="menuitem3">
-            <property name="name">menuitem3</property>
-            <property name="label" translatable="yes">_View</property>
-          </object>
-        </child>
-        <child>
           <object class="GtkAction" id="menuitem4">
             <property name="name">menuitem4</property>
             <property name="label" translatable="yes">_Help</property>
@@ -70,7 +66,6 @@
           <separator/>
           <menuitem action="imagemenuitem5"/>
         </menu>
-        <menuitem action="menuitem3"/>
         <menu action="menuitem4">
           <menuitem action="menu_about"/>
         </menu>
