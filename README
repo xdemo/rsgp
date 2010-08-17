@@ -5,4 +5,18 @@ They are officially trademarks of Jagex Ltd. And am working to  resolve
 a way to do this. Whether asking for permission, or simply recreating
 custom ones which match the approriate skill icon.
 
+For now you can manually download them from the runescape website
+and place in the same directory as the scripts. As long as you
+don't rename them they should load up nicely.
+
+Depends on, glade-perl libglade perl-gtk2-mozembed
+And obviously openjdk / sun-java (otherwise you wouldn't be able to run 
+runescape in the first place.
+
+To launch the runescape client: 
+	
+	$ perl rsgp.pl
+	
+
+------------------------------------------------------------------------
 ~ xdemo
