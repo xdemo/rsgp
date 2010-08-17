@@ -39,7 +39,7 @@ sub main {
 		$gamewindow -> add($moz);
 		$window->show_all();
 
-	$moz -> load_url("file:///home/$user/Desktop/start.html");
+	$moz -> load_url("file:///home/$user/rsgp/start.html);
 
 	# main loop
 	Gtk2->main();
