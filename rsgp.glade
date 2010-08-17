@@ -29,10 +29,16 @@
                     <property name="visible">True</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="imagemenuitem1">
-                        <property name="label">gtk-new</property>
+                        <property name="label">Fetch Icons</property>
                         <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="get_icons"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image26">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </widget>
+                        </child>
                       </widget>
                     </child>
                     <child>
@@ -74,13 +80,6 @@
                     </child>
                   </widget>
                 </child>
-              </widget>
-            </child>
-            <child>
-              <widget class="GtkMenuItem" id="menuitem3">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_View</property>
-                <property name="use_underline">True</property>
               </widget>
             </child>
             <child>
