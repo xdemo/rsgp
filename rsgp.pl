@@ -39,7 +39,7 @@ sub main {
 		$gamewindow -> add($moz);
 		$window->show_all();
 
-	$moz -> load_url("file:///home/$user/rsgp/start.html);
+	$moz -> load_url("file:///home/$user/rsgp/start.html");
 
 	# main loop
 	Gtk2->main();
@@ -115,7 +115,7 @@ sub on_btnPlay_clicked {
 
 
 sub on_btnHome_clicked {
-	$moz -> load_url("file:///home/$user/Desktop/rsgp/start.html");
+	$moz -> load_url("file:///home/$user/rsgp/start.html");
 }
 
 sub on_about_clicked {
