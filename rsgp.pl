@@ -127,7 +127,7 @@ sub on_about_clicked {
 # without distributing them
 
 sub get_icons {
-	system(xterm -e sh geticons.sh);
+	system("xterm -e sh geticons.sh");
 }
 
 
