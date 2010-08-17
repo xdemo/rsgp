@@ -1,0 +1,942 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy project-wide -->
+  <widget class="GtkWindow" id="window">
+    <property name="title" translatable="yes">rsgp 0.01</property>
+    <property name="window_position">center</property>
+    <property name="default_width">1200</property>
+    <property name="default_height">700</property>
+    <property name="icon">skill_icon_attack1.gif</property>
+    <signal name="destroy" handler="gtk_main_quit"/>
+    <child>
+      <widget class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <property name="border_width">1</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <widget class="GtkMenuBar" id="menubar1">
+            <property name="width_request">0</property>
+            <property name="height_request">0</property>
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_File</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem1">
+                        <property name="label">gtk-new</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem2">
+                        <property name="label">gtk-open</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem3">
+                        <property name="label">gtk-save</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem4">
+                        <property name="label">gtk-save-as</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem1">
+                        <property name="visible">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem5">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem3">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_View</property>
+                <property name="use_underline">True</property>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem4">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu3">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="menu_about">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_about_clicked"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHPaned" id="hpaned1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="position">200</property>
+            <property name="position_set">True</property>
+            <child>
+              <widget class="GtkVBox" id="vbox2">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <widget class="GtkVBox" id="vbox3">
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <widget class="GtkHBox" id="hbox1">
+                        <property name="visible">True</property>
+                        <child>
+                          <widget class="GtkButton" id="btnHome">
+                            <property name="label" translatable="yes">Home</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="on_btnHome_clicked"/>
+                          </widget>
+                          <packing>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkButton" id="btnPlay">
+                            <property name="label" translatable="yes">Play</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="on_btnPlay_clicked"/>
+                          </widget>
+                          <packing>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkHBox" id="hbox2">
+                        <property name="visible">True</property>
+                        <child>
+                          <widget class="GtkVBox" id="vbox4">
+                            <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkVBox" id="vbox6">
+                            <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkVBox" id="vbox5">
+                        <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <widget class="GtkLabel" id="lblUsername">
+                            <property name="visible">True</property>
+                            <property name="ypad">1</property>
+                            <property name="label" translatable="yes">Highscores</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkHBox" id="hbox3">
+                            <property name="visible">True</property>
+                            <child>
+                              <widget class="GtkEntry" id="search_entry">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                              </widget>
+                              <packing>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkButton" id="btnSearch">
+                                <property name="label" translatable="yes">Search</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <signal name="clicked" handler="on_btnSearch_clicked"/>
+                              </widget>
+                              <packing>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkTable" id="table2">
+                    <property name="visible">True</property>
+                    <property name="n_rows">9</property>
+                    <property name="n_columns">6</property>
+                    <child>
+                      <widget class="GtkImage" id="image1">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_attack1.gif</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image2">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_hitpoints1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image3">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_mining1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image4">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_strength1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image5">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_agility1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image6">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_smithing1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image7">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_defence1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image8">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_herblore1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image9">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_ranged1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image10">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_prayer1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image11">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_magic1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image12">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_thieving1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image13">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_crafting1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image14">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_fletching1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image15">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_fishing1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image16">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_cooking1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image17">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_firemaking1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image18">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_woodcutting1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image19">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_runecraft1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image20">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_slayer1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image21">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_farming1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image22">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_construction1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image23">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_hunter1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image24">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_summoning1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkImage" id="image25">
+                        <property name="visible">True</property>
+                        <property name="pixbuf">skill_icon_dungeoneering1.gif</property>
+                      </widget>
+                      <packing>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_attack">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_strength">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_defence">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_ranged">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_prayer">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_magic">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_rc">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_construction">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_dungeon">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_hitpoints">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_mining">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_smithing">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_agility">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_herblore">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_fishing">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_cooking">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_thieveing">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_craft">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_fletch">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_slayer">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_fm">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_wc">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_farm">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_summon">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">5</property>
+                        <property name="right_attach">6</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="lbl_hunter">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">0</property>
+                      </widget>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkFixed" id="fixed2">
+                    <property name="visible">True</property>
+                  </widget>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="resize">False</property>
+                <property name="shrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkScrolledWindow" id="scrolledwindow1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hscrollbar_policy">automatic</property>
+                <property name="vscrollbar_policy">automatic</property>
+                <child>
+                  <placeholder/>
+                </child>
+              </widget>
+              <packing>
+                <property name="resize">True</property>
+                <property name="shrink">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkAboutDialog" id="aboutdialog">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">About rsgp</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="icon">skill_icon_attack1.gif</property>
+    <property name="type_hint">normal</property>
+    <property name="transient_for">window</property>
+    <property name="has_separator">False</property>
+    <property name="program_name">rsgp</property>
+    <property name="version">0.01</property>
+    <property name="copyright" translatable="yes">Copyright &#xA9; 2010 Ricky T</property>
+    <property name="comments" translatable="yes">A runescape client for the GNOME desktop</property>
+    <property name="website">http://xdemo.net/c/</property>
+    <property name="website_label" translatable="yes">http://xdemo.net/c/</property>
+    <property name="license" translatable="yes">rsgp is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+rsgp is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with rsgp; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA</property>
+    <property name="authors">Ricky T &lt;root@xdemo.net&gt;</property>
+    <property name="artists">Runescape Skill icons are copyright
+of Jagex Games Studio Ltd. 2010</property>
+    <property name="logo">skill_icon_attack1.gif</property>
+    <property name="wrap_license">True</property>
+    <signal name="close" handler="on_aboutdialog_close"/>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>
