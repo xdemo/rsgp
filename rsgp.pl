@@ -123,7 +123,18 @@ sub on_about_clicked {
 }
 
 
+# allows downloading of runescape icons
+# without distributing them
+
+sub get_icons {
+	system(xterm -e sh geticons.sh);
+}
+
+
+# quit
 sub gtk_main_quit {
 	print "[+] Exit\n";	
 	exit 0;
 }
+
+#EOF#
