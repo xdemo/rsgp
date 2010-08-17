@@ -8,15 +8,9 @@ Current Features:
 	Highscores lookup tab pane
 	Game Window
 
-
-One important note is the icons intended to be part of this project.
-They are officially trademarks of Jagex Ltd. And am working to  resolve
-a way to do this. Whether asking for permission, or simply recreating
-custom ones which match the approriate skill icon.
-
-For now you can manually download them from the runescape website
-and place in the same directory as the scripts. As long as you
-don't rename them they should load up nicely.
+Support for fetching icons from the web, "File > fetch icons"
+xterm will pop-up and wget them into the script directory.
+Reload the client for changes to take effect.
 
 Depends on, glade-perl libglade perl-gtk2-mozembed
 And obviously openjdk / sun-java (otherwise you wouldn't be able to run 
