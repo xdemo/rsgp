@@ -63,8 +63,6 @@ sub on_btnSearch_clicked {
 	# get the text value of search_entry
 	$rsn = $builder->get_object( 'search_entry' )->get_text;
 
-	print "-debug- fetching, $rsn hiscore\n";
-
 		my $url = 'http://hiscore.runescape.com/index_lite.ws?player=' . $rsn;
 		
 		# fetch data from above url
@@ -76,7 +74,6 @@ sub on_btnSearch_clicked {
 	# split everything into @s at each comma
 	my @s = (split(/,/, $data));
 
-	print "-debug- \n@s\n";	
 	# set skill labels to appropriate value
 	set_skill_label('lbl_attack'	, $s[4]);
 	set_skill_label('lbl_defence'	, $s[7]);
